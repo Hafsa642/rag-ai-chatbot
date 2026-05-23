@@ -1,6 +1,4 @@
 # README.md
-
-  md
 # 🤖 AI Research Assistant — RAG Chatbot
 
 An advanced Retrieval-Augmented Generation (RAG) AI chatbot developed using React, FastAPI, LangChain, ChromaDB, Hugging Face embeddings, and LLaMA 3.2 via Ollama.
