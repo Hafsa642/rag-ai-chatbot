@@ -3,9 +3,8 @@
 
 An advanced Retrieval-Augmented Generation (RAG) AI chatbot developed using React, FastAPI, LangChain, ChromaDB, Hugging Face embeddings, and LLaMA 3.2 via Ollama.
 
-This chatbot allows users to upload PDF and . txt files and ask intelligent questions from uploaded content with contextual AI-generated responses and source citations.
+This chatbot allows users to upload PDF and .TXT files and ask intelligent questions from uploaded content with contextual AI-generated responses and source citations.
 
----
 
 # ✨ Features
 
@@ -22,7 +21,6 @@ This chatbot allows users to upload PDF and . txt files and ask intelligent ques
 - 🔄 Automatic vector database refresh
 - 🧾 Support for large documents
 
----
 
 #  Technologies Used
 
@@ -54,7 +52,6 @@ This chatbot allows users to upload PDF and . txt files and ask intelligent ques
 8. LLaMA generates contextual response
 9. Source citations are displayed
 
----
 
 #  Project Structure
 
@@ -70,7 +67,6 @@ rag-chatbot/
 │
 ├── requirements.txt
 └── README.md
-````
 
 ⚙️ Installation
 
@@ -78,7 +74,7 @@ rag-chatbot/
 
 ```bash
 git clone https://github.com/Hafsa642/rag-ai-chatbot.git
-```
+
 2️⃣ Backend Setup
 
 ```bash
@@ -92,7 +88,7 @@ Install dependencies:
 
 ```bash
 pip install fastapi uvicorn langchain langchain-community chromadb sentence-transformers pypdf python-multipart
-```
+
 3️⃣ Install Ollama
 
 Install Ollama:
@@ -109,7 +105,7 @@ Start Ollama:
 
 ```bash
 ollama serve
-```
+
 ## 4️Frontend Setup
 
 ```bash
@@ -127,7 +123,7 @@ Run frontend:
 
 ```bash
 npm start
-```
+
 #  Run Backend
 
   bash
@@ -232,6 +228,3 @@ Developed by Hafsa as a full-stack AI RAG chatbot project using modern AI techno
 * Meta LLaMA
 * React
 * FastAPI
-
-```
-```
