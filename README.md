@@ -60,7 +60,6 @@ This chatbot allows users to upload PDF and . txt files and ask intelligent ques
 
  text
 rag-chatbot/
-│
 ├── backend.py
 ├── documents/
 ├── chroma_db_main/
