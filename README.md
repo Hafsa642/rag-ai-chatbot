@@ -3,7 +3,7 @@
 
 An advanced Retrieval-Augmented Generation (RAG) AI chatbot developed using React, FastAPI, LangChain, ChromaDB, Hugging Face embeddings, and LLaMA 3.2 via Ollama.
 
-This chatbot allows users to upload PDF documents and ask intelligent questions from uploaded content with contextual AI-generated responses and source citations.
+This chatbot allows users to upload PDF and . txt files and ask intelligent questions from uploaded content with contextual AI-generated responses and source citations.
 
 ---
 
