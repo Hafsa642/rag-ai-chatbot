@@ -15,16 +15,12 @@ from langchain.chains import ConversationalRetrievalChain
 from langchain.memory import ConversationBufferMemory
 from langchain.schema import Document
 
-# =========================================
 # SETTINGS
-# =========================================
 
 DOCUMENTS_PATH = "documents"
 DB_PATH = "chroma_db_main"
 
-# =========================================
-# FASTAPI
-# =========================================
+# FAST API
 
 app = FastAPI()
 
@@ -36,9 +32,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# =========================================
 # LOAD DOCUMENTS
-# =========================================
 
 all_docs = []
 
@@ -50,7 +44,6 @@ for file in os.listdir(DOCUMENTS_PATH):
 
     try:
 
-        # PDF FILES
         if file.endswith(".pdf"):
 
             loader = PyPDFLoader(file_path)
@@ -58,7 +51,6 @@ for file in os.listdir(DOCUMENTS_PATH):
 
             all_docs.extend(docs)
 
-        # TXT FILES
         elif file.endswith(".txt"):
 
             with open(file_path, "r", encoding="utf-8") as f:
@@ -75,9 +67,7 @@ for file in os.listdir(DOCUMENTS_PATH):
 
 print(f"Loaded pages: {len(all_docs)}")
 
-# =========================================
 # TEXT SPLITTING
-# =========================================
 
 text_splitter = RecursiveCharacterTextSplitter(
     chunk_size=2000,
@@ -91,17 +81,13 @@ for doc in texts:
 
 print(f"Chunks created: {len(texts)}")
 
-# =========================================
 # EMBEDDINGS
-# =========================================
 
 embedding_model = HuggingFaceEmbeddings(
     model_name="sentence-transformers/all-MiniLM-L6-v2"
 )
 
-# =========================================
 # VECTOR DATABASE
-# =========================================
 
 if os.path.exists(DB_PATH):
 
@@ -124,28 +110,20 @@ else:
 
     vector_db.persist()
 
-# =========================================
 # RETRIEVER
-# =========================================
 
 retriever = vector_db.as_retriever(
     search_kwargs={
         "k": 4,
     }
 )
-
-# =========================================
 # LLM
-# =========================================
 
 llm = Ollama(
     model="llama3.2"
 )
 
-# =========================================
 # MEMORY
-# =========================================
-
 memory = ConversationBufferMemory(
     memory_key="chat_history",
     return_messages=True,
@@ -175,10 +153,7 @@ QA_PROMPT = PromptTemplate(
     template=template,
     input_variables=["context", "question"]
 )
-
-# =========================================
 # RAG CHAIN
-# =========================================
 
 qa_chain = ConversationalRetrievalChain.from_llm(
     llm=llm,
@@ -189,17 +164,11 @@ qa_chain = ConversationalRetrievalChain.from_llm(
         "prompt": QA_PROMPT
     }
 )
-
-# =========================================
 # REQUEST MODEL
-# =========================================
 
 class ChatRequest(BaseModel):
     question: str
-
-# =========================================
 # API ENDPOINT
-# =========================================
 
 @app.post("/chat")
 def chat(request: ChatRequest):
