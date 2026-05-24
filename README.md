@@ -73,14 +73,14 @@ rag-chatbot/
 └── README.md
 ````
 
-# ⚙️ Installation
+⚙️ Installation
 
-## 1️⃣ Clone Repository
+1️⃣ Clone Repository
 
 ```bash
 git clone https://github.com/Hafsa642/rag-ai-chatbot.git
 ```
-## 2️⃣ Backend Setup
+2️⃣ Backend Setup
 
 ```bash
 cd rag-chatbot
@@ -94,7 +94,7 @@ Install dependencies:
 ```bash
 pip install fastapi uvicorn langchain langchain-community chromadb sentence-transformers pypdf python-multipart
 ```
-## 3️⃣ Install Ollama
+3️⃣ Install Ollama
 
 Install Ollama:
 
