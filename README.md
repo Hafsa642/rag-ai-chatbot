@@ -69,9 +69,9 @@ rag-chatbot/
 └── README.md
 
 ⚙️ Installation
-```
-
+``` 
 1️⃣ Clone Repository
+
 ```bash
 git clone https://github.com/Hafsa642/rag-ai-chatbot.git
 
